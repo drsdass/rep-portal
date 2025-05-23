@@ -1,0 +1,22 @@
+
+<!doctype html>
+<html>
+  <body>
+    <h2>Welcome, {{ rep }}</h2>
+    <a href="/logout">Logout</a>
+    <table border="1">
+      <tr>
+        <th>Location</th><th>Reimbursement</th><th>COGS</th><th>Net</th><th>Commission</th>
+      </tr>
+      {% for row in data %}
+      <tr>
+        <td>{{ row['Location'] }}</td>
+        <td>${{ row['Reimbursement'] }}</td>
+        <td>${{ row['COGS'] }}</td>
+        <td>${{ row['Net'] }}</td>
+        <td>${{ row['Commission'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
