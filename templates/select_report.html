@@ -7,8 +7,9 @@
     <h1>Select Report Type</h1>
     <form method="post">
         <select name="report_type">
-            <option value="financials">Financials</option>
-            <option value="client_breakdown">Monthly Client Breakdown</option>
+            {% for entity in available_entities %}
+                <option value="{{ entity }}">{{ entity.title() }}</option>
+            {% endfor %}
         </select>
         <button type="submit">View Report</button>
     </form>
